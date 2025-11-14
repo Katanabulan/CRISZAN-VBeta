@@ -914,7 +914,7 @@ body {
 }
 p {
     text-align: center;
-    color: white;
+    color: black;
 }
 .card3 {
     background-color: transparent;
@@ -1072,3 +1072,8 @@ p {
         .card1 p {
             color: #666 !important;
         }
+h3 {
+    font-style: solid;
+    text-align: center;
+    color: white;
+}
