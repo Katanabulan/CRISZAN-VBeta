@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Pengiriman - SITTA UT</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <div class="space-background" id="spaceBackground"></div>
+    <nav class="dashboard-nav">
+        <div class="nav-left">
+            <img src="assets/ut.png" alt="Logo UT" class="logo">
+            <h2>CRISZAN</h2>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html" class="nav-link hover">Dashboard</a></li>
+            <li><a href="stok.html" class="nav-link hover">Katalog Bahan Ajar</a></li>
+            <li><a href="tracking.html" class="nav-link hover">Lacak Pengiriman</a></li>
+            <li class="dropdown">
+                <a href="pilihmateri.html" class="nav-link">Pilih Materi</a>
+                <div class="dropdown-content">
+                    <a href="Materi html.html">Materi Html</a>
+                    <a href="Materi php.html">Materi Php</a>
+                    <a href="Materi javascript.html">Materi JavaScript</a>
+                    <a href="Materi css.html">Materi Css</a>
+                </div>
+            </li>
+        </ul>
+
+        <button id="logoutBtn" class="btn-secondary">Keluar</button>
+    </nav>
+
+        <main class="tracking-main">
+            <h2>Tracking Pengiriman</h2>
+            
+            <div class="tracking-form">
+                <div class="form-group">
+                    <label for="doNumber">Nomor Delivery Order</label>
+                    <input type="text" id="doNumber" name="doNumber" placeholder="Masukkan nomor DO">
+                </div>
+                <button id="searchBtn" class="btn-primary">Cari</button>
+            </div>
+            
+            <div id="trackingResult" class="tracking-result">
+                <!-- Hasil pencarian akan ditampilkan di sini -->
+            </div>
+
+            <!-- Tabel Data Dummy -->
+            <div class="dummy-section">
+                <h3>Data Dummy untuk Testing</h3>
+                <p class="subtitle">Gunakan nomor DO berikut untuk mencoba fitur tracking:</p>
+                
+                <table class="stock-table dummy-table">
+                    <thead>
+                        <tr>
+                            <th>Nomor DO</th>
+                            <th>Nama Mahasiswa</th>
+                            <th>Status</th>
+                            <th>Progress</th>
+                            <th>Ekspedisi</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dummyTableBody">
+                        <!-- Data akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+ <footer class="footer">
+    <p> &copy;Info Creator</p>
+    <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=61561587017407&locale=id_ID">
+            <img src="assets/fb.png" alt="Facebook" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+        </a>
+        <a href="https://www.instagram.com/krisnar_m/?next=%2F">
+            <img src="assets/ig.png" alt="Instagram" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+        </a>
+        <a href="https://www.youtube.com/channel/UCftXAcErypGKXPra1Ya3Uyw">
+            <img src="assets/yt.png" alt="YouTube" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+        </a>
+        <a href="https://www.tiktok.com/@krisn_rm">
+            <img src="assets/tiktok.png" alt="Tiktok" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+        </a>
+    </div>
+ </footer>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi JavaScript Dasar - CRISZAN</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <div class="space-background" id="spaceBackground"></div>
+    <nav class="dashboard-nav">
+        <div class="nav-left">
+            <img src="assets/ut.png" alt="Logo UT" class="logo">
+            <h2>CRISZAN</h2>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html" class="nav-link hover">Dashboard</a></li>
+            <li><a href="stok.html" class="nav-link hover">Katalog Bahan Ajar</a></li>
+            <li><a href="tracking.html" class="nav-link hover">Lacak Pengiriman</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Pilih Materi</a>
+                <div class="dropdown-content">
+                    <a href="Materi html.html">Materi Html</a>
+                    <a href="Materi php.html">Materi Php</a>
+                    <a href="Materi javascript.html">Materi JavaScript</a>
+                    <a href="Materi css.html">Materi Css</a>
+                </div>
+            </li>
+        </ul>
+        <button id="logoutBtn" class="btn-secondary">Keluar</button>
+    </nav>
+
+    <main class="materi-main">
+        <div class="materi-header">
+            <h1>Materi JavaScript Dasar</h1>
+            <p>Belajar JavaScript dari Nol untuk Pemula</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 10%"></div>
+            </div>
+        </div>
+
+        <div class="materi-container">
+            <div class="sidebar">
+                <h3>Modul JavaScript Dasar</h3>
+                <ul class="module-list">
+                    <li><a href="#pengenalan">Apa itu JavaScript?</a></li>
+                    <li><a href="#variabel">Variabel & Tipe Data</a></li>
+                    <li><a href="#operator">Operator</a></li>
+                    <li class="active"><a href="#kondisi">Kondisi (if/else)</a></li>
+                    <li><a href="#perulangan">Perulangan</a></li>
+                    <li><a href="#fungsi">Fungsi</a></li>
+                    <li><a href="#array">Array</a></li>
+                    <li><a href="#object">Object</a></li>
+                    <li><a href="#dom">DOM Manipulation</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <section id="kondisi" class="module">
+                    <h2>4. Kondisi (if/else)</h2>
+                    <div class="module-content">
+                        <h3>If Statement</h3>
+                        <p style="text-align: justify;">
+                            Menjalankan kode jika kondisi benar (true).
+                        </p>
+                        <div class="code-example">
+                            <pre><code>let umur = 18;
+
+if (umur >= 18) {
+    console.log('Anda sudah dewasa');
+}</code></pre>
+                        </div>
+
+                        <h3>If...Else</h3>
+                        <p style="text-align: justify;">
+                            Menjalankan kode berbeda berdasarkan kondisi.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>let nilai = 75;
+
+if (nilai >= 70) {
+    console.log('Anda lulus');
+} else {
+    console.log('Anda tidak lulus');
+}</code></pre>
+                        </div>
+
+                        <h3>Else If</h3>
+                        <p style="text-align: justify;">
+                            Untuk multiple conditions.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>let nilai = 85;
+
+if (nilai >= 90) {
+    console.log('Grade: A');
+} else if (nilai >= 80) {
+    console.log('Grade: B');
+} else if (nilai >= 70) {
+    console.log('Grade: C');
+} else {
+    console.log('Grade: D');
+}</code></pre>
+                        </div>
+
+                        <h3>Switch Case</h3>
+                        <p style="text-align: justify;">
+                            Untuk banyak kondisi yang membandingkan nilai yang sama.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>let hari = 'Senin';
+
+switch (hari) {
+    case 'Senin':
+        console.log('Hari kerja');
+        break;
+    case 'Sabtu':
+    case 'Minggu':
+        console.log('Hari libur');
+        break;
+    default:
+        console.log('Hari kerja');
+}</code></pre>
+                        </div>
+
+                        <h3>Ternary Operator</h3>
+                        <p style="text-align: justify;">
+                            Shortcut untuk if...else sederhana.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>let umur = 20;
+let status = umur >= 18 ? 'Dewasa' : 'Anak-anak';
+console.log(status); // Dewasa
+
+// Sama dengan:
+if (umur >= 18) {
+    status = 'Dewasa';
+} else {
+    status = 'Anak-anak';
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="perulangan" class="module">
+                    <h2>5. Perulangan (Loops)</h2>
+                    <div class="module-content">
+                        <h3>For Loop</h3>
+                        <p style="text-align: justify;">
+                            Untuk perulangan dengan jumlah yang diketahui.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>// Menampilkan angka 1-5
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+// Hasil: 1, 2, 3, 4, 5</code></pre>
+                        </div>
+
+                        <h3>While Loop</h3>
+                        <p style="text-align: justify;">
+                            Untuk perulangan selama kondisi true.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;
+}</code></pre>
+                        </div>
+
+                        <h3>Do...While Loop</h3>
+                        <p style="text-align: justify;">
+                            Sama seperti while, tapi menjalankan minimal sekali.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>let i = 1;
+do {
+    console.log(i);
+    i++;
+} while (i <= 5);</code></pre>
+                        </div>
+
+                        <h3>Loop dengan Array</h3>
+                        <div class="code-example">
+                            <pre><code>let fruits = ['Apel', 'Jeruk', 'Mangga'];
+
+// For loop
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+// For...of (modern)
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+
+// forEach method
+fruits.forEach(function(fruit) {
+    console.log(fruit);
+});</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="fungsi" class="module">
+                    <h2>6. Fungsi (Functions)</h2>
+                    <div class="module-content">
+                        <h3>Apa itu Fungsi?</h3>
+                        <p style="text-align: justify;">
+                            Blok kode yang dapat dipanggil berulang kali.
+                        </p>
+
+                        <h3>Function Declaration</h3>
+                        <div class="code-example">
+                            <pre><code>// Membuat fungsi
+function sapa(nama) {
+    return 'Halo, ' + nama + '!';
+}
+
+// Memanggil fungsi
+let pesan = sapa('Budi');
+console.log(pesan); // Halo, Budi!</code></pre>
+                        </div>
+
+                        <h3>Function Expression</h3>
+                        <div class="code-example">
+                            <pre><code>const sapa = function(nama) {
+    return 'Halo, ' + nama + '!';
+};
+
+console.log(sapa('Ani')); // Halo, Ani!</code></pre>
+                        </div>
+
+                        <h3>Arrow Function (Modern)</h3>
+                        <div class="code-example">
+                            <pre><code>// Bentuk sederhana
+const sapa = (nama) => 'Halo, ' + nama + '!';
+
+// Bentuk dengan multiple lines
+const hitungLuas = (panjang, lebar) => {
+    let luas = panjang * lebar;
+    return luas;
+};
+
+console.log(sapa('Citra')); // Halo, Citra!
+console.log(hitungLuas(5, 3)); // 15</code></pre>
+                        </div>
+
+                        <h3>Parameter dan Return</h3>
+                        <div class="code-example">
+                            <pre><code>// Fungsi dengan multiple parameters
+function hitungTotal(harga, jumlah) {
+    return harga * jumlah;
+}
+
+// Fungsi tanpa return
+function tampilkanPesan(nama) {
+    console.log('Selamat datang, ' + nama);
+}
+
+let total = hitungTotal(10000, 3);
+console.log(total); // 30000
+
+tampilkanPesan('Doni'); // Selamat datang, Doni</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="array" class="module">
+                    <h2>7. Array</h2>
+                    <div class="module-content">
+                        <h3>Apa itu Array?</h3>
+                        <p style="text-align: justify;">
+                            Struktur data untuk menyimpan kumpulan nilai.
+                        </p>
+
+                        <h3>Membuat Array</h3>
+                        <div class="code-example">
+                            <pre><code>// Cara 1: Array literal
+let fruits = ['Apel', 'Jeruk', 'Mangga'];
+
+// Cara 2: Constructor
+let numbers = new Array(1, 2, 3, 4, 5);
+
+// Array campuran
+let mixed = ['Teks', 123, true, null];</code></pre>
+                        </div>
+
+                        <h3>Mengakses Array</h3>
+                        <div class="code-example">
+                            <pre><code>let fruits = ['Apel', 'Jeruk', 'Mangga'];
+
+console.log(fruits[0]); // Apel (index 0)
+console.log(fruits[1]); // Jeruk (index 1)
+console.log(fruits[2]); // Mangga (index 2)
+console.log(fruits.length); // 3 (panjang array)</code></pre>
+                        </div>
+
+                        <h3>Method Array Penting</h3>
+                        <div class="code-example">
+                            <pre><code>let fruits = ['Apel', 'Jeruk'];
+
+// push - tambah di akhir
+fruits.push('Mangga');
+console.log(fruits); // ['Apel', 'Jeruk', 'Mangga']
+
+// pop - hapus dari akhir
+let last = fruits.pop();
+console.log(last); // Mangga
+
+// unshift - tambah di awal
+fruits.unshift('Pisang');
+console.log(fruits); // ['Pisang', 'Apel', 'Jeruk']
+
+// shift - hapus dari awal
+let first = fruits.shift();
+console.log(first); // Pisang
+
+// indexOf - cari index
+let index = fruits.indexOf('Jeruk');
+console.log(index); // 1
+
+// slice - potong array
+let someFruits = fruits.slice(0, 2);
+console.log(someFruits); // ['Apel', 'Jeruk']</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="object" class="module">
+                    <h2>8. Object</h2>
+                    <div class="module-content">
+                        <h3>Apa itu Object?</h3>
+                        <p style="text-align: justify;">
+                            Struktur data untuk menyimpan data terstruktur dalam key-value pairs.
+                        </p>
+
+                        <h3>Membuat Object</h3>
+                        <div class="code-example">
+                            <pre><code>// Object literal
+let person = {
+    nama: 'Budi',
+    umur: 25,
+    pekerjaan: 'Developer',
+    isActive: true
+};</code></pre>
+                        </div>
+
+                        <h3>Mengakses Object</h3>
+                        <div class="code-example">
+                            <pre><code>let person = {
+    nama: 'Budi',
+    umur: 25
+};
+
+// Dot notation
+console.log(person.nama); // Budi
+console.log(person.umur); // 25
+
+// Bracket notation
+console.log(person['nama']); // Budi
+console.log(person['umur']); // 25</code></pre>
+                        </div>
+
+                        <h3>Memodifikasi Object</h3>
+                        <div class="code-example">
+                            <pre><code>let person = {
+    nama: 'Budi',
+    umur: 25
+};
+
+// Menambah property
+person.pekerjaan = 'Developer';
+
+// Mengubah property
+person.umur = 26;
+
+// Menghapus property
+delete person.pekerjaan;
+
+console.log(person);</code></pre>
+                        </div>
+
+                        <h3>Method dalam Object</h3>
+                        <div class="code-example">
+                            <pre><code>let person = {
+    nama: 'Budi',
+    umur: 25,
+    sapa: function() {
+        return 'Halo, nama saya ' + this.nama;
+    },
+    // Arrow function (tidak bisa pakai this)
+    perkenalan: () => {
+        return 'Halo!';
+    }
+};
+
+console.log(person.sapa()); // Halo, nama saya Budi</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="dom" class="module">
+                    <h2>9. DOM Manipulation</h2>
+                    <div class="module-content">
+                        <h3>Apa itu DOM?</h3>
+                        <p style="text-align: justify;">
+                            DOM (Document Object Model) adalah representasi object dari HTML yang memungkinkan JavaScript mengakses dan memanipulasi elemen HTML.
+                        </p>
+
+                        <h3>Seleksi Elemen</h3>
+                        <div class="code-example">
+                            <pre><code>// By ID
+let header = document.getElementById('header');
+
+// By Class (returns array-like)
+let items = document.getElementsByClassName('item');
+
+// By Tag Name
+let paragraphs = document.getElementsByTagName('p');
+
+// Modern selectors (CSS-like)
+let element = document.querySelector('#header');
+let allItems = document.querySelectorAll('.item');</code></pre>
+                        </div>
+
+                        <h3>Mengubah Konten</h3>
+                        <div class="code-example">
+                            <pre><code>let title = document.getElementById('title');
+
+// Mengubah teks
+title.textContent = 'Judul Baru';
+
+// Mengubah HTML
+title.innerHTML = '&lt;strong&gt;Judul Baru&lt;/strong&gt;';
+
+// Mengubah style
+title.style.color = 'red';
+title.style.fontSize = '24px';</code></pre>
+                        </div>
+
+                        <h3>Event Handling</h3>
+                        <div class="code-example">
+                            <pre><code>let button = document.getElementById('myButton');
+
+// Cara 1: Property
+button.onclick = function() {
+    alert('Button diklik!');
+};
+
+// Cara 2: addEventListener (recommended)
+button.addEventListener('click', function() {
+    alert('Button diklik!');
+});
+
+// Event lainnya: mouseover, keypress, submit, dll</code></pre>
+                        </div>
+
+                        <h3>Contoh Praktis</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;button id="btn"&gt;Klik Saya&lt;/button&gt;
+&lt;p id="output"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+    let btn = document.getElementById('btn');
+    let output = document.getElementById('output');
+    
+    btn.addEventListener('click', function() {
+        output.textContent = 'Button telah diklik!';
+        output.style.color = 'green';
+    });
+&lt;/script&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="interactive-demo">
+                    <h3>Coba JavaScript</h3>
+                    <div class="demo-form">
+                        <div class="form-group">
+                            <label for="js-code">Tulis kode JavaScript:</label>
+                            <textarea id="js-code" rows="4" placeholder="Contoh: console.log('Hello World!')"></textarea>
+                        </div>
+                        <button onclick="runJSCode()" class="btn-primary">Jalankan Kode</button>
+                        <div class="demo-result">
+                            <h4>Hasil:</h4>
+                            <pre id="js-output">Hasil akan muncul di sini...</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>Kuis JavaScript Dasar</h3>
+                    <form class="quiz-form">
+                        <div class="quiz-question">
+                            <p><strong>1. Manakah cara yang benar membuat variabel?</strong></p>
+                            <input type="radio" id="q1a" name="q1" value="a">
+                            <label for="q1a">let nama = "Budi";</label><br>
+                            
+                            <input type="radio" id="q1b" name="q1" value="b">
+                            <label for="q1b">variable nama = "Budi";</label><br>
+                            
+                            <input type="radio" id="q1c" name="q1" value="c">
+                            <label for="q1c">string nama = "Budi";</label>
+                        </div>
+
+                        <div class="quiz-question">
+                            <p><strong>2. Apa output dari: console.log(2 + "2")?</strong></p>
+                            <input type="radio" id="q2a" name="q2" value="a">
+                            <label for="q2a">4</label><br>
+                            
+                            <input type="radio" id="q2b" name="q2" value="b">
+                            <label for="q2b">22</label><br>
+                            
+                            <input type="radio" id="q2c" name="q2" value="c">
+                            <label for="q2c">Error</label>
+                        </div>
+
+                        <div class="quiz-question">
+                            <p><strong>3. Bagaimana cara memilih elemen dengan ID "header"?</strong></p>
+                            <input type="radio" id="q3a" name="q3" value="a">
+                            <label for="q3a">document.getElementById('header')</label><br>
+                            
+                            <input type="radio" id="q3b" name="q3" value="b">
+                            <label for="q3b">document.querySelector('#header')</label><br>
+                            
+                            <input type="radio" id="q3c" name="q3" value="c">
+                            <label for="q3c">Keduanya benar</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="js-praktik"><strong>4. Buat fungsi untuk menghitung luas persegi panjang:</strong></label>
+                            <textarea id="js-praktik" name="js_praktik" rows="6" placeholder="Tulis kode JavaScript di sini..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Kirim Jawaban</button>
+                    </form>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary">Modul Sebelumnya</button>
+                    <button class="btn-primary">Modul Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Info Creator</p>
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=61561587017407&locale=id_ID">
+                <img src="assets/fb.png" alt="Facebook" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.instagram.com/krisnar_m/?next=%2F">
+                <img src="assets/ig.png" alt="Instagram" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.youtube.com/channel/UCftXAcErypGKXPra1Ya3Uyw">
+                <img src="assets/yt.png" alt="YouTube" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.tiktok.com/@krisn_rm">
+                <img src="assets/tiktok.png" alt="Tiktok" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function runJSCode() {
+            const code = document.getElementById('js-code').value;
+            const output = document.getElementById('js-output');
+            
+            try {
+                // Capture console.log
+                const originalLog = console.log;
+                let logOutput = '';
+                
+                console.log = function(...args) {
+                    logOutput += args.join(' ') + '\n';
+                };
+
+                // Execute the code
+                eval(code);
+                
+                output.textContent = logOutput || 'Tidak ada output';
+                console.log = originalLog;
+                
+            } catch (error) {
+                output.textContent = 'Error: ' + error.message;
+            }
+        }
+
+        // Contoh untuk demo
+        let fruits = ['Apel', 'Jeruk', 'Mangga'];
+        let person = {
+            nama: 'Budi',
+            umur: 25
+        };
+    </script>
+</body>
+<script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</html>

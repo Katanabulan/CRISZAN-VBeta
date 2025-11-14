@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi CSS Dasar - CRISZAN</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <div class="space-background" id="spaceBackground"></div>
+
+    <nav class="dashboard-nav">
+        <div class="nav-left">
+            <img src="assets/ut.png" alt="Logo UT" class="logo">
+            <h2>CRISZAN</h2>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html" class="nav-link hover">Dashboard</a></li>
+            <li><a href="stok.html" class="nav-link hover">Katalog Bahan Ajar</a></li>
+            <li><a href="tracking.html" class="nav-link hover">Lacak Pengiriman</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Pilih Materi</a>
+                <div class="dropdown-content">
+                    <a href="Materi html.html">Materi Html</a>
+                    <a href="Materi php.html">Materi Php</a>
+                    <a href="Materi javascript.html">Materi JavaScript</a>
+                    <a href="Materi css.html">Materi Css</a>
+                </div>
+            </li>
+        </ul>
+        <button id="logoutBtn" class="btn-secondary">Keluar</button>
+    </nav>
+
+    <main class="materi-main">
+        <div class="materi-header">
+            <h1>Materi CSS Dasar</h1>
+            <p>Belajar CSS dari Nol untuk Pemula</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 15%"></div>
+            </div>
+        </div>
+
+        <div class="materi-container">
+            <div class="sidebar">
+                <h3>Modul CSS Dasar</h3>
+                <ul class="module-list">
+                    <li class="active"><a href="#pengenalan">Apa itu CSS?</a></li>
+                    <li><a href="#cara-pakai">Cara Memakai CSS</a></li>
+                    <li><a href="#selector">Selector</a></li>
+                    <li><a href="#warna">Warna & Background</a></li>
+                    <li><a href="#teks">Styling Teks</a></li>
+                    <li><a href="#box-model">Box Model</a></li>
+                    <li><a href="#layout">Layout Dasar</a></li>
+                    <li><a href="#position">Position</a></li>
+                    <li><a href="#responsive">Responsive</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <section id="pengenalan" class="module">
+                    <h2>1. Apa itu CSS?</h2>
+                    <div class="module-content">
+                        <h3>Pengertian CSS</h3>
+                        <p style="text-align: justify;">
+                            <strong>CSS (Cascading Style Sheets)</strong> adalah bahasa yang digunakan untuk mengatur tampilan dan format dari dokumen HTML. CSS mengontrol bagaimana elemen HTML ditampilkan di browser.
+                        </p>
+                        
+                        <h3>Fungsi CSS</h3>
+                        <ul>
+                            <li>Mengatur warna teks dan background</li>
+                            <li>Mengatur font dan ukuran teks</li>
+                            <li>Mengatur layout dan posisi elemen</li>
+                            <li>Membuat design responsive</li>
+                            <li>Menambahkan animasi dan transisi</li>
+                        </ul>
+
+                        <h3>Hubungan HTML dan CSS</h3>
+                        <p style="text-align: justify;">
+                            <strong>HTML</strong> = Struktur bangunan (dinding, pintu, jendela)<br>
+                            <strong>CSS</strong> = Desain dan dekorasi (cat, furniture, tata letak)
+                        </p>
+                    </div>
+                </section>
+
+                <section id="cara-pakai" class="module">
+                    <h2>2. Cara Memakai CSS</h2>
+                    <div class="module-content">
+                        <h3>1. Inline CSS</h3>
+                        <p style="text-align: justify;">
+                            CSS ditulis langsung dalam atribut <code>style</code> elemen HTML.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>&lt;h1 style="color: blue; font-size: 24px;"&gt;
+    Judul Berwarna Biru
+&lt;/h1&gt;
+&lt;p style="background: yellow; padding: 10px;"&gt;
+    Paragraf dengan background kuning
+&lt;/p&gt;</code></pre>
+                        </div>
+
+                        <h3>2. Internal CSS</h3>
+                        <p style="text-align: justify;">
+                            CSS ditulis dalam tag <code>&lt;style&gt;</code> di dalam <code>&lt;head&gt;</code>.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        h1 {
+            color: blue;
+            font-size: 24px;
+        }
+        p {
+            background: yellow;
+            padding: 10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+                        </div>
+
+                        <h3>3. External CSS</h3>
+                        <p style="text-align: justify;">
+                            CSS ditulis dalam file terpisah (.css) dan dihubungkan dengan HTML.
+                        </p>
+                        <div class="code-example">
+                            <h4>File style.css:</h4>
+                            <pre><code>h1 {
+    color: blue;
+    font-size: 24px;
+}
+p {
+    background: yellow;
+    padding: 10px;
+}</code></pre>
+                            <h4>File HTML:</h4>
+                            <pre><code>&lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</code></pre>
+                        </div>
+
+                        <h3>Rekomendasi</h3>
+                        <p style="text-align: justify;">
+                            Gunakan <strong>External CSS</strong> untuk project yang serius karena lebih terorganisir dan mudah maintenance.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="selector" class="module">
+                    <h2>3. Selector CSS</h2>
+                    <div class="module-content">
+                        <h3>Apa itu Selector?</h3>
+                        <p style="text-align: justify;">
+                            Selector digunakan untuk "memilih" elemen HTML yang ingin di-styling.
+                        </p>
+
+                        <h3>Jenis-jenis Selector</h3>
+                        
+                        <h4>1. Element Selector</h4>
+                        <p style="text-align: justify;">Memilih elemen berdasarkan tag name.</p>
+                        <div class="code-example">
+                            <pre><code>p {
+    color: red;
+}
+h1 {
+    font-size: 32px;
+}</code></pre>
+                        </div>
+
+                        <h4>2. Class Selector</h4>
+                        <p style="text-align: justify;">Memilih elemen berdasarkan class. Diawali dengan titik (.)</p>
+                        <div class="code-example">
+                            <pre><code>.important {
+    font-weight: bold;
+    color: red;
+}
+.box {
+    border: 1px solid black;
+    padding: 20px;
+}</code></pre>
+                            <h4>Penggunaan di HTML:</h4>
+                            <pre><code>&lt;p class="important"&gt;Teks penting&lt;/p&gt;
+&lt;div class="box"&gt;Kotak&lt;/div&gt;</code></pre>
+                        </div>
+
+                        <h4>3. ID Selector</h4>
+                        <p style="text-align: justify;">Memilih elemen berdasarkan ID. Diawali dengan pagar (#)</p>
+                        <div class="code-example">
+                            <pre><code>#header {
+    background: blue;
+    color: white;
+}
+#main-content {
+    width: 80%;
+    margin: 0 auto;
+}</code></pre>
+                            <h4>Penggunaan di HTML:</h4>
+                            <pre><code>&lt;div id="header"&gt;Header Website&lt;/div&gt;
+&lt;div id="main-content"&gt;Konten Utama&lt;/div&gt;</code></pre>
+                        </div>
+
+                        <h3>Perbedaan Class vs ID</h3>
+                        <ul>
+                            <li><strong>Class</strong> bisa dipakai banyak elemen</li>
+                            <li><strong>ID</strong> harus unik, hanya untuk satu elemen</li>
+                            <li>Gunakan class untuk styling yang berulang</li>
+                            <li>Gunakan ID untuk elemen yang spesifik</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="warna" class="module">
+                    <h2>4. Warna dan Background</h2>
+                    <div class="module-content">
+                        <h3>Mengatur Warna Teks</h3>
+                        <div class="code-example">
+                            <pre><code>p {
+    color: red;               /* Nama warna */
+    color: #ff0000;           /* Hex code */
+    color: rgb(255, 0, 0);    /* RGB */
+    color: rgba(255, 0, 0, 0.5); /* RGB dengan transparansi */
+}</code></pre>
+                        </div>
+
+                        <h3>Mengatur Background</h3>
+                        <div class="code-example">
+                            <pre><code>div {
+    background-color: lightblue;    /* Warna background */
+    background-image: url('gambar.jpg'); /* Gambar background */
+    background-repeat: no-repeat;   /* Tidak diulang */
+    background-position: center;    /* Posisi tengah */
+    background-size: cover;         /* Cover seluruh area */
+}
+
+/* Shorthand */
+div {
+    background: lightblue url('gambar.jpg') no-repeat center;
+}</code></pre>
+                        </div>
+
+                        <h3>Contoh Praktis</h3>
+                        <div class="code-example">
+                            <pre><code>.warning {
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.success {
+    color: white;
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px;
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="teks" class="module">
+                    <h2>5. Styling Teks</h2>
+                    <div class="module-content">
+                        <h3>Font Properties</h3>
+                        <div class="code-example">
+                            <pre><code>p {
+    font-family: Arial, sans-serif;  /* Jenis font */
+    font-size: 16px;                 /* Ukuran font */
+    font-weight: bold;               /* Ketebalan */
+    font-style: italic;              /* Gaya miring */
+    line-height: 1.5;                /* Jarak antar baris */
+}</code></pre>
+                        </div>
+
+                        <h3>Text Properties</h3>
+                        <div class="code-example">
+                            <pre><code>h1 {
+    text-align: center;      /* Rata tengah */
+    text-decoration: underline; /* Garis bawah */
+    text-transform: uppercase; /* Huruf kapital */
+    letter-spacing: 2px;     /* Jarak antar huruf */
+    word-spacing: 5px;       /* Jarak antar kata */
+}</code></pre>
+                        </div>
+
+                        <h3>Google Fonts</h3>
+                        <p style="text-align: justify;">Cara menggunakan font dari Google Fonts:</p>
+                        <div class="code-example">
+                            <h4>1. Tambahkan di HTML:</h4>
+                            <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"&gt;</code></pre>
+                            <h4>2. Gunakan di CSS:</h4>
+                            <pre><code>body {
+    font-family: 'Roboto', sans-serif;
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="box-model" class="module">
+                    <h2>6. Box Model</h2>
+                    <div class="module-content">
+                        <h3>Apa itu Box Model?</h3>
+                        <p style="text-align: justify;">
+                            Setiap elemen HTML adalah sebuah "kotak" yang terdiri dari:
+                        </p>
+                        <ul>
+                            <li><strong>Content</strong> - Konten sebenarnya (teks, gambar)</li>
+                            <li><strong>Padding</strong> - Jarak antara content dan border</li>
+                            <li><strong>Border</strong> - Garis tepi</li>
+                            <li><strong>Margin</strong> - Jarak dengan elemen lain</li>
+                        </ul>
+
+                        <h3>Visualisasi Box Model</h3>
+                        <div class="code-example">
+                            <pre><code>┌─────────────────────────────┐
+│          Margin             │
+│  ┌───────────────────────┐  │
+│  │       Border          │  │
+│  │  ┌─────────────────┐  │  │
+│  │  │    Padding      │  │  │
+│  │  │  ┌───────────┐  │  │  │
+│  │  │  │  Content  │  │  │  │
+│  │  │  └───────────┘  │  │  │
+│  │  └─────────────────┘  │  │
+│  └───────────────────────┘  │
+└─────────────────────────────┘</code></pre>
+                        </div>
+
+                        <h3>Contoh Penggunaan</h3>
+                        <div class="code-example">
+                            <pre><code>.kotak {
+    width: 200px;           /* Lebar content */
+    height: 100px;          /* Tinggi content */
+    padding: 20px;          /* Jarak dalam */
+    border: 2px solid black; /* Garis tepi */
+    margin: 10px;           /* Jarak luar */
+    
+    /* Shorthand */
+    padding: 10px 20px;     /* atas-bawah kiri-kanan */
+    margin: 10px 20px 30px 40px; /* atas kanan bawah kiri */
+}</code></pre>
+                        </div>
+
+                        <h3>Box-Sizing</h3>
+                        <p style="text-align: justify;">Mengatur bagaimana width dan height dihitung:</p>
+                        <div class="code-example">
+                            <pre><code>.kotak {
+    box-sizing: border-box; /* width termasuk padding & border */
+    width: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    /* Total width tetap 200px */
+}
+
+.kotak2 {
+    box-sizing: content-box; /* default */
+    width: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    /* Total width = 200 + 40 + 4 = 244px */
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="layout" class="module">
+                    <h2>7. Layout Dasar</h2>
+                    <div class="module-content">
+                        <h3>Display Property</h3>
+                        <div class="code-example">
+                            <pre><code>/* Block - mengambil lebar penuh */
+div, p, h1 {
+    display: block;
+}
+
+/* Inline - hanya mengambil space yang dibutuhkan */
+span, a, strong {
+    display: inline;
+}
+
+/* Inline-block - seperti inline tapi bisa atur width/height */
+button, img {
+    display: inline-block;
+}
+
+/* None - menyembunyikan elemen */
+.hidden {
+    display: none;
+}</code></pre>
+                        </div>
+
+                        <h3>Float</h3>
+                        <p style="text-align: justify;">Untuk membuat elemen mengapung ke kiri atau kanan.</p>
+                        <div class="code-example">
+                            <pre><code>.gambar {
+    float: left;
+    margin-right: 20px;
+}
+
+.sidebar {
+    float: right;
+    width: 30%;
+}
+
+/* Clear float */
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}</code></pre>
+                        </div>
+
+                        <h3>Flexbox Dasar</h3>
+                        <p style="text-align: justify;">Layout modern untuk mengatur elemen dalam satu dimensi.</p>
+                        <div class="code-example">
+                            <pre><code>.container {
+    display: flex;
+    justify-content: space-between; /* Sejajar horizontal */
+    align-items: center;           /* Sejajar vertikal */
+    flex-direction: row;           /* Arah: row/column */
+}
+
+.item {
+    flex: 1;  /* Membagi space sama rata */
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="position" class="module">
+                    <h2>8. Position</h2>
+                    <div class="module-content">
+                        <h3>Jenis-jenis Position</h3>
+                        
+                        <h4>1. Static (Default)</h4>
+                        <p style="text-align: justify;">Posisi normal dalam flow dokumen.</p>
+                        <div class="code-example">
+                            <pre><code>div {
+    position: static;
+}</code></pre>
+                        </div>
+
+                        <h4>2. Relative</h4>
+                        <p style="text-align: justify;">Posisi relatif terhadap posisi normalnya.</p>
+                        <div class="code-example">
+                            <pre><code>.box {
+    position: relative;
+    top: 10px;    /* Geser 10px ke bawah */
+    left: 20px;   /* Geser 20px ke kanan */
+}</code></pre>
+                        </div>
+
+                        <h4>3. Absolute</h4>
+                        <p style="text-align: justify;">Posisi relatif terhadap parent yang memiliki position relative/absolute.</p>
+                        <div class="code-example">
+                            <pre><code>.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 0;
+    right: 0;
+}</code></pre>
+                        </div>
+
+                        <h4>4. Fixed</h4>
+                        <p style="text-align: justify;">Posisi relatif terhadap viewport (tetap di tempat saat scroll).</p>
+                        <div class="code-example">
+                            <pre><code>.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}</code></pre>
+                        </div>
+
+                        <h4>5. Sticky</h4>
+                        <p style="text-align: justify;">Gabungan relative dan fixed.</p>
+                        <div class="code-example">
+                            <pre><code>.header {
+    position: sticky;
+    top: 0;
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="responsive" class="module">
+                    <h2>9. Responsive Design</h2>
+                    <div class="module-content">
+                        <h3>Viewport Meta Tag</h3>
+                        <p style="text-align: justify;">Wajib ada di HTML untuk responsive design.</p>
+                        <div class="code-example">
+                            <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                        </div>
+
+                        <h3>Media Queries</h3>
+                        <p style="text-align: justify;">Menerapkan CSS berbeda berdasarkan ukuran layar.</p>
+                        <div class="code-example">
+                            <pre><code>/* Desktop */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    .menu {
+        flex-direction: column;
+    }
+}</code></pre>
+                        </div>
+
+                        <h3>Unit Responsive</h3>
+                        <div class="code-example">
+                            <pre><code>/* Relative units */
+.container {
+    width: 80%;           /* Persentase dari parent */
+    font-size: 2rem;      /* Relative ke root font size */
+    padding: 2em;         /* Relative ke font size elemen */
+}
+
+/* Viewport units */
+.hero {
+    height: 100vh;        /* 100% tinggi viewport */
+    width: 100vw;         /* 100% lebar viewport */
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h3>Kuis CSS Dasar</h3>
+                    <form class="quiz-form">
+                        <div class="quiz-question">
+                            <p><strong>1. Apa kepanjangan dari CSS?</strong></p>
+                            <input type="radio" id="q1a" name="q1" value="a">
+                            <label for="q1a">Cascading Style Sheets</label><br>
+                            
+                            <input type="radio" id="q1b" name="q1" value="b">
+                            <label for="q1b">Computer Style Sheets</label><br>
+                            
+                            <input type="radio" id="q1c" name="q1" value="c">
+                            <label for="q1c">Creative Style System</label>
+                        </div>
+
+                        <div class="quiz-question">
+                            <p><strong>2. Manakah selector yang benar untuk class?</strong></p>
+                            <input type="radio" id="q2a" name="q2" value="a">
+                            <label for="q2a">.my-class</label><br>
+                            
+                            <input type="radio" id="q2b" name="q2" value="b">
+                            <label for="q2b">#my-class</label><br>
+                            
+                            <input type="radio" id="q2c" name="q2" value="c">
+                            <label for="q2c">my-class</label>
+                        </div>
+
+                        <div class="quiz-question">
+                            <p><strong>3. Property apa yang mengatur jarak dalam elemen?</strong></p>
+                            <input type="radio" id="q3a" name="q3" value="a">
+                            <label for="q3a">padding</label><br>
+                            
+                            <input type="radio" id="q3b" name="q3" value="b">
+                            <label for="q3b">margin</label><br>
+                            
+                            <input type="radio" id="q3c" name="q3" value="c">
+                            <label for="q3c">border</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="css-praktik"><strong>4. Buat CSS untuk:</strong></label>
+                            <ul>
+                                <li>Paragraf dengan teks merah, font Arial, ukuran 18px</li>
+                                <li>Div dengan background biru, padding 20px, margin 10px</li>
+                                <li>Class "center" untuk rata tengah teks</li>
+                            </ul>
+                            <textarea id="css-praktik" name="css_praktik" rows="8" placeholder="Tulis kode CSS di sini..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Kirim Jawaban</button>
+                    </form>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary">Modul Sebelumnya</button>
+                    <button class="btn-primary">Modul Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Info Creator</p>
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=61561587017407&locale=id_ID">
+                <img src="assets/fb.png" alt="Facebook" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.instagram.com/krisnar_m/?next=%2F">
+                <img src="assets/ig.png" alt="Instagram" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.youtube.com/channel/UCftXAcErypGKXPra1Ya3Uyw">
+                <img src="assets/yt.png" alt="YouTube" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.tiktok.com/@krisn_rm">
+                <img src="assets/tiktok.png" alt="Tiktok" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+        </div>
+    </footer>
+</body>
+<script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</html>

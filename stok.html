@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok Bahan Ajar - CRISZAN</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+      <div class="space-background" id="spaceBackground"></div>
+    <nav class="dashboard-nav">
+        <div class="nav-left">
+            <img src="assets/ut.png" alt="Logo UT" class="logo">
+            <h2>CRISZAN</h2>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html" class="nav-link hover">Dashboard</a></li>
+            <li><a href="stok.html" class="nav-link hover">Katalog Bahan Ajar</a></li>
+            <li><a href="tracking.html" class="nav-link hover">Lacak Pengiriman</a></li>
+            <li class="dropdown">
+                <a href="pilihmateri.html" class="nav-link">Pilih Materi</a>
+                <div class="dropdown-content">
+                    <a href="Materi html.html">Materi Html</a>
+                    <a href="Materi php.html">Materi Php</a>
+                    <a href="Materi javascript.html">Materi JavaScript</a>
+                    <a href="Materi css.html">Materi Css</a>
+                </div>
+            </li>
+        </ul>
+
+        <button id="logoutBtn" class="btn-secondary">Keluar</button>
+    </nav>
+
+
+        <main class="stok-main">
+            <div class="stok-header">
+                <h2>Informasi Stok Bahan Ajar</h2>
+                <button id="addStockBtn" class="btn-primary">Tambah Stok</button>
+            </div>
+            
+            <table id="stockTable" class="stock-table">
+                <thead>
+                    <tr>
+                        <th>Kode Bahan</th>
+                        <th>Nama Bahan</th>
+                        <th>Stok</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="stockTableBody">
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <!-- Modal Tambah Stok -->
+    <div id="addStockModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tambah Stok Baru</h2>
+            <form id="addStockForm">
+                <div class="form-group">
+                    <label for="kodeBahan">Kode Bahan</label>
+                    <input type="text" id="kodeBahan" name="kodeBahan" required>
+                </div>
+                <div class="form-group">
+                    <label for="namaBahan">Nama Bahan</label>
+                    <input type="text" id="namaBahan" name="namaBahan" required>
+                </div>
+                <div class="form-group">
+                    <label for="stok">Jumlah Stok</label>
+                    <input type="number" id="stok" name="stok" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" name="status" required>
+                        <option value="Tersedia">Tersedia</option>
+                        <option value="Habis">Habis</option>
+                        <option value="Terbatas">Terbatas</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Simpan</button>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <p> &copy;Info Creator</p>
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=61561587017407&locale=id_ID">
+                <img src="assets/fb.png" alt="Facebook" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.instagram.com/krisnar_m/?next=%2F">
+                <img src="assets/ig.png" alt="Instagram" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.youtube.com/channel/UCftXAcErypGKXPra1Ya3Uyw">
+                <img src="assets/yt.png" alt="YouTube" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.tiktok.com/@krisn_rm">
+                <img src="assets/tiktok.png" alt="Tiktok" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+        </div>
+     </footer>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

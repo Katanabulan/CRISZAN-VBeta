@@ -1,2 +1,2 @@
-# CRISZAN-VBeta
+# CRISZAN
 Readme

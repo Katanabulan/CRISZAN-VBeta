@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi HTML Dasar - CRISZAN</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+      <div class="space-background" id="spaceBackground"></div>
+    <nav class="dashboard-nav">
+        <div class="nav-left">
+            <img src="assets/ut.png" alt="Logo UT" class="logo">
+            <h2>CRISZAN</h2>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html" class="nav-link hover">Dashboard</a></li>
+            <li><a href="stok.html" class="nav-link hover">Katalog Bahan Ajar</a></li>
+            <li><a href="tracking.html" class="nav-link hover">Lacak Pengiriman</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Pilih Materi</a>
+                <div class="dropdown-content">
+                    <a href="Materi html.html">Materi Html</a>
+                    <a href="Materi php.html">Materi Php</a>
+                    <a href="Materi javascript.html">Materi JavaScript</a>
+                    <a href="Materi css.html">Materi Css</a>
+                </div>
+            </li>
+        </ul>
+        <button id="logoutBtn" class="btn-secondary">Keluar</button>
+    </nav>
+
+    <main class="materi-main">
+        <div class="materi-header">
+            <h1>Materi HTML Dasar</h1>
+            <p>Belajar HTML dari Nol untuk Pemula</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 20%"></div>
+            </div>
+        </div>
+
+        <div class="materi-container">
+            <div class="sidebar">
+                <h3>Modul HTML Dasar</h3>
+                <ul class="module-list">
+                    <li class="active"><a href="#pengenalan">Apa itu HTML?</a></li>
+                    <li><a href="#struktur">Struktur HTML</a></li>
+                    <li><a href="#tag-dasar">Tag Dasar</a></li>
+                    <li><a href="#heading">Heading & Paragraf</a></li>
+                    <li><a href="#list">List</a></li>
+                    <li><a href="#link">Link</a></li>
+                    <li><a href="#gambar">Gambar</a></li>
+                    <li><a href="#tabel">Tabel</a></li>
+                    <li><a href="#form">Form</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <section id="pengenalan" class="module">
+                    <h2>1. Apa itu HTML?</h2>
+                    <div class="module-content">
+                        <h3>Pengertian HTML</h3>
+                        <p style="text-align: justify;">
+                            <strong>HTML (HyperText Markup Language)</strong> adalah bahasa markup yang digunakan untuk membuat struktur dan konten halaman web. HTML bukan bahasa pemrograman, melainkan bahasa markup yang menggunakan tag untuk menandai elemen-elemen dalam halaman.
+                        </p>
+                        
+                        <h3>Fungsi HTML</h3>
+                        <ul>
+                            <li>Membuat struktur halaman web</li>
+                            <li>Menampilkan teks, gambar, video, dan konten lainnya</li>
+                            <li>Membuat form untuk input data</li>
+                            <li>Membuat link antar halaman</li>
+                            <li>Mengorganisir konten dengan heading, paragraf, list, dll</li>
+                        </ul>
+
+                        <h3>Contoh Sederhana</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Halaman Pertamaku&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Selamat Datang!&lt;/h1&gt;
+    &lt;p&gt;Ini adalah halaman web pertama saya.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="struktur" class="module">
+                    <h2>2. Struktur Dasar HTML</h2>
+                    <div class="module-content">
+                        <h3>Bagian-bagian Dokumen HTML</h3>
+                        <p style="text-align: justify;">
+                            Setiap dokumen HTML memiliki struktur dasar yang terdiri dari beberapa bagian penting:
+                        </p>
+                        
+                        <div class="code-example">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Konten yang ditampilkan --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+
+                        <h3>Penjelasan Setiap Bagian:</h3>
+                        <ul>
+                            <li><code>&lt;!DOCTYPE html&gt;</code> - Deklarasi bahwa ini dokumen HTML5</li>
+                            <li><code>&lt;html&gt;</code> - Elemen root yang membungkus semua konten</li>
+                            <li><code>&lt;head&gt;</code> - Berisi informasi tentang dokumen (tidak ditampilkan)</li>
+                            <li><code>&lt;body&gt;</code> - Berisi konten yang ditampilkan di browser</li>
+                            <li><code>&lt;meta charset="UTF-8"&gt;</code> - Mengatur encoding karakter</li>
+                            <li><code>&lt;title&gt;</code> - Judul yang muncul di tab browser</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="tag-dasar" class="module">
+                    <h2>3. Tag dan Elemen HTML</h2>
+                    <div class="module-content">
+                        <h3>Apa itu Tag?</h3>
+                        <p style="text-align: justify;">
+                            Tag adalah penanda yang diapit oleh tanda kurung siku <code>&lt;&gt;</code>. Tag biasanya berpasangan: tag pembuka dan tag penutup.
+                        </p>
+
+                        <h3>Struktur Elemen HTML</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;nama_tag&gt;Konten di sini&lt;/nama_tag&gt;</code></pre>
+                        </div>
+
+                        <h3>Contoh Tag Dasar:</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;h1&gt;Ini heading level 1&lt;/h1&gt;
+&lt;p&gt;Ini adalah paragraf.&lt;/p&gt;
+&lt;strong&gt;Teks tebal&lt;/strong&gt;
+&lt;em&gt;Teks miring&lt;/em&gt;
+&lt;br&gt;  &lt;!-- Baris baru (tidak butuh penutup) --&gt;
+&lt;hr&gt;  &lt;!-- Garis horizontal --&gt;</code></pre>
+                        </div>
+
+                        <h3>Atribut dalam Tag</h3>
+                        <p style="text-align: justify;">
+                            Atribut memberikan informasi tambahan tentang elemen. Ditulis dalam tag pembuka.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>&lt;tag nama_atribut="nilai"&gt;Konten&lt;/tag&gt;
+&lt;p class="important"&gt;Paragraf penting&lt;/p&gt;
+&lt;img src="gambar.jpg" alt="Deskripsi"&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="heading" class="module">
+                    <h2>4. Heading dan Paragraf</h2>
+                    <div class="module-content">
+                        <h3>Heading (h1 - h6)</h3>
+                        <p style="text-align: justify;">
+                            Heading digunakan untuk judul dan subjudul. Ada 6 level heading dari h1 (terbesar) sampai h6 (terkecil).
+                        </p>
+                        <div class="code-example">
+                            <pre><code>&lt;h1&gt;Judul Utama&lt;/h1&gt;
+&lt;h2&gt;Sub Judul&lt;/h2&gt;
+&lt;h3&gt;Sub Sub Judul&lt;/h3&gt;
+&lt;h4&gt;Heading Level 4&lt;/h4&gt;
+&lt;h5&gt;Heading Level 5&lt;/h5&gt;
+&lt;h6&gt;Heading Level 6&lt;/h6&gt;</code></pre>
+                        </div>
+
+                        <h3>Paragraf (p)</h3>
+                        <p style="text-align: justify;">
+                            Tag <code>&lt;p&gt;</code> digunakan untuk membuat paragraf teks.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>&lt;p&gt;Ini adalah paragraf pertama.&lt;/p&gt;
+&lt;p&gt;Ini adalah paragraf kedua. 
+Teks akan otomatis wrap sesuai lebar container.&lt;/p&gt;</code></pre>
+                        </div>
+
+                        <h3>Format Teks Lainnya</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;strong&gt;Teks Tebal (penting)&lt;/strong&gt;
+&lt;b&gt;Teks Tebal (hanya visual)&lt;/b&gt;
+&lt;em&gt;Teks Miring (penekanan)&lt;/em&gt;
+&lt;i&gt;Teks Miring (hanya visual)&lt;/i&gt;
+&lt;u&gt;Teks Bergaris Bawah&lt;/u&gt;
+&lt;mark&gt;Teks Disorot&lt;/mark&gt;
+&lt;small&gt;Teks Kecil&lt;/small&gt;
+&lt;sub&gt;Subscript&lt;/sub&gt;
+&lt;sup&gt;Superscript&lt;/sup&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="list" class="module">
+                    <h2>5. List (Daftar)</h2>
+                    <div class="module-content">
+                        <h3>Unordered List (ul)</h3>
+                        <p style="text-align: justify;">
+                            Daftar tanpa urutan tertentu (bullet points).
+                        </p>
+                        <div class="code-example">
+                            <pre><code>&lt;ul&gt;
+    &lt;li&gt;Item pertama&lt;/li&gt;
+    &lt;li&gt;Item kedua&lt;/li&gt;
+    &lt;li&gt;Item ketiga&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+
+                        <h3>Ordered List (ol)</h3>
+                        <p style="text-align: justify;">
+                            Daftar dengan urutan (nomor/huruf).
+                        </p>
+                        <div class="code-example">
+                            <pre><code>&lt;ol&gt;
+    &lt;li&gt;Langkah pertama&lt;/li&gt;
+    &lt;li&gt;Langkah kedua&lt;/li&gt;
+    &lt;li&gt;Langkah ketiga&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                        </div>
+
+                        <h3>Description List (dl)</h3>
+                        <p style="text-align: justify;">
+                            Daftar dengan istilah dan deskripsi.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="link" class="module">
+                    <h2>6. Link (Hyperlink)</h2>
+                    <div class="module-content">
+                        <h3>Tag Anchor (a)</h3>
+                        <p style="text-align: justify;">
+                            Tag <code>&lt;a&gt;</code> digunakan untuk membuat link ke halaman lain atau bagian dalam halaman.
+                        </p>
+
+                        <h3>Link ke Halaman Lain</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;a href="https://www.google.com"&gt;Pergi ke Google&lt;/a&gt;
+&lt;a href="about.html"&gt;Halaman About&lt;/a&gt;
+&lt;a href="folder/document.pdf"&gt;Download PDF&lt;/a&gt;</code></pre>
+                        </div>
+
+                        <h3>Atribut Penting untuk Link</h3>
+                        <ul>
+                            <li><code>href</code> - URL tujuan</li>
+                            <li><code>target</code> - Cara membuka link</li>
+                            <li><code>title</code> - Tooltip saat hover</li>
+                        </ul>
+
+                        <div class="code-example">
+                            <pre><code>&lt;a href="https://example.com" 
+   target="_blank" 
+   title="Buka di tab baru"&gt;
+    Klik di sini
+&lt;/a&gt;</code></pre>
+                        </div>
+
+                        <h3>Link ke Bagian dalam Halaman</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;!-- Buat anchor --&gt;
+&lt;h2 id="bagian1"&gt;Bagian 1&lt;/h2&gt;
+
+&lt;!-- Link ke anchor --&gt;
+&lt;a href="#bagian1"&gt;Pergi ke Bagian 1&lt;/a&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="gambar" class="module">
+                    <h2>7. Gambar (img)</h2>
+                    <div class="module-content">
+                        <h3>Tag Image (img)</h3>
+                        <p style="text-align: justify;">
+                            Tag <code>&lt;img&gt;</code> digunakan untuk menampilkan gambar. Ini adalah tag self-closing (tidak butuh tag penutup).
+                        </p>
+
+                        <h3>Atribut Penting untuk Gambar</h3>
+                        <ul>
+                            <li><code>src</code> - Sumber file gambar</li>
+                            <li><code>alt</code> - Teks alternatif (wajib untuk accessibility)</li>
+                            <li><code>width</code> - Lebar gambar</li>
+                            <li><code>height</code> - Tinggi gambar</li>
+                            <li><code>title</code> - Tooltip saat hover</li>
+                        </ul>
+
+                        <div class="code-example">
+                            <pre><code>&lt;img src="gambar.jpg" alt="Deskripsi gambar"&gt;
+&lt;img src="images/photo.png" alt="Foto" width="200" height="150"&gt;
+&lt;img src="https://example.com/image.jpg" alt="Gambar dari web"&gt;</code></pre>
+                        </div>
+
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li>Selalu gunakan atribut <code>alt</code> untuk accessibility</li>
+                            <li>Gunakan format gambar yang tepat (JPG untuk foto, PNG untuk grafik)</li>
+                            <li>Optimalkan ukuran file untuk loading yang cepat</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="tabel" class="module">
+                    <h2>8. Tabel</h2>
+                    <div class="module-content">
+                        <h3>Struktur Tabel Dasar</h3>
+                        <p style="text-align: justify;">
+                            Tabel digunakan untuk menampilkan data dalam format baris dan kolom.
+                        </p>
+
+                        <div class="code-example">
+                            <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Nama&lt;/th&gt;
+        &lt;th&gt;Usia&lt;/th&gt;
+        &lt;th&gt;Kota&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Andi&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;Jakarta&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Budi&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+        &lt;td&gt;Bandung&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+
+                        <h3>Tag-tag dalam Tabel</h3>
+                        <ul>
+                            <li><code>&lt;table&gt;</code> - Container tabel</li>
+                            <li><code>&lt;tr&gt;</code> - Table row (baris)</li>
+                            <li><code>&lt;th&gt;</code> - Table header (sel header)</li>
+                            <li><code>&lt;td&gt;</code> - Table data (sel data)</li>
+                            <li><code>&lt;caption&gt;</code> - Judul tabel</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="form" class="module">
+                    <h2>9. Form</h2>
+                    <div class="module-content">
+                        <h3>Form Dasar</h3>
+                        <p style="text-align: justify;">
+                            Form digunakan untuk mengumpulkan input dari pengguna.
+                        </p>
+
+                        <form class="example-form">
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap:</label>
+                                <input type="text" id="nama" name="nama" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="pesan">Pesan:</label>
+                                <textarea id="pesan" name="pesan" rows="4"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Jenis Kelamin:</label>
+                                <input type="radio" id="laki" name="gender" value="laki">
+                                <label for="laki">Laki-laki</label>
+                                <input type="radio" id="perempuan" name="gender" value="perempuan">
+                                <label for="perempuan">Perempuan</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Hobi:</label>
+                                <input type="checkbox" id="membaca" name="hobi" value="membaca">
+                                <label for="membaca">Membaca</label>
+                                <input type="checkbox" id="olahraga" name="hobi" value="olahraga">
+                                <label for="olahraga">Olahraga</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="kota">Kota:</label>
+                                <select id="kota" name="kota">
+                                    <option value="">Pilih Kota</option>
+                                    <option value="jakarta">Jakarta</option>
+                                    <option value="bandung">Bandung</option>
+                                    <option value="surabaya">Surabaya</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">Daftar</button>
+                            <button type="reset" class="btn-secondary">Reset</button>
+                        </form>
+
+                        <h3>Kode HTML Form Diatas:</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="nama"&gt;Nama Lengkap:&lt;/label&gt;
+    &lt;input type="text" id="nama" name="nama" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" required&gt;
+    
+    &lt;label for="pesan"&gt;Pesan:&lt;/label&gt;
+    &lt;textarea id="pesan" name="pesan" rows="4"&gt;&lt;/textarea&gt;
+    
+    &lt;button type="submit"&gt;Daftar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h3>Kuis HTML Dasar</h3>
+                    <form class="quiz-form">
+                        <div class="quiz-question">
+                            <p><strong>1. Apa kepanjangan dari HTML?</strong></p>
+                            <input type="radio" id="q1a" name="q1" value="a">
+                            <label for="q1a">Hyper Text Markup Language</label><br>
+                            
+                            <input type="radio" id="q1b" name="q1" value="b">
+                            <label for="q1b">High Tech Modern Language</label><br>
+                            
+                            <input type="radio" id="q1c" name="q1" value="c">
+                            <label for="q1c">Hyper Transfer Markup Language</label>
+                        </div>
+
+                        <div class="quiz-question">
+                            <p><strong>2. Tag mana yang digunakan untuk membuat paragraf?</strong></p>
+                            <input type="radio" id="q2a" name="q2" value="a">
+                            <label for="q2a">&lt;p&gt;</label><br>
+                            
+                            <input type="radio" id="q2b" name="q2" value="b">
+                            <label for="q2b">&lt;para&gt;</label><br>
+                            
+                            <input type="radio" id="q2c" name="q2" value="c">
+                            <label for="q2c">&lt;paragraph&gt;</label>
+                        </div>
+
+                        <div class="quiz-question">
+                            <p><strong>3. Atribut apa yang wajib ada di tag &lt;img&gt;?</strong></p>
+                            <input type="radio" id="q3a" name="q3" value="a">
+                            <label for="q3a">src dan alt</label><br>
+                            
+                            <input type="radio" id="q3b" name="q3" value="b">
+                            <label for="q3b">hanya src</label><br>
+                            
+                            <input type="radio" id="q3c" name="q3" value="c">
+                            <label for="q3c">hanya alt</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="html-praktik"><strong>4. Buat kode HTML untuk menampilkan:</strong></label>
+                            <ul>
+                                <li>Judul "Website Pertamaku"</li>
+                                <li>Paragraf dengan teks "Selamat datang di website saya"</li>
+                                <li>Gambar dengan sumber "logo.jpg" dan alt text "Logo"</li>
+                            </ul>
+                            <textarea id="html-praktik" name="html_praktik" rows="8" placeholder="Tulis kode HTML di sini..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Kirim Jawaban</button>
+                    </form>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary">Modul Sebelumnya</button>
+                    <button class="btn-primary">Modul Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Info Creator</p>
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=61561587017407&locale=id_ID">
+                <img src="assets/fb.png" alt="Facebook" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.instagram.com/krisnar_m/?next=%2F">
+                <img src="assets/ig.png" alt="Instagram" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.youtube.com/channel/UCftXAcErypGKXPra1Ya3Uyw">
+                <img src="assets/yt.png" alt="YouTube" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.tiktok.com/@krisn_rm">
+                <img src="assets/tiktok.png" alt="Tiktok" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form handling for demo
+        document.querySelector('.example-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form berhasil dikirim! (Ini hanya demo)');
+        });
+    </script>
+</body>
+<script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</html>

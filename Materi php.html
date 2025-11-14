@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi PHP Dasar - CRISZAN</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+      <div class="space-background" id="spaceBackground"></div>
+    <nav class="dashboard-nav">
+        <div class="nav-left">
+            <img src="assets/ut.png" alt="Logo UT" class="logo">
+            <h2>CRISZAN</h2>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html" class="nav-link hover">Dashboard</a></li>
+            <li><a href="stok.html" class="nav-link hover">Katalog Bahan Ajar</a></li>
+            <li><a href="tracking.html" class="nav-link hover">Lacak Pengiriman</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Pilih Materi</a>
+                <div class="dropdown-content">
+                    <a href="Materi html.html">Materi Html</a>
+                    <a href="Materi php.html">Materi Php</a>
+                    <a href="Materi javascript.html">Materi JavaScript</a>
+                    <a href="Materi css.html">Materi Css</a>
+                </div>
+            </li>
+        </ul>
+        <button id="logoutBtn" class="btn-secondary">Keluar</button>
+    </nav>
+
+    <main class="materi-main">
+        <div class="materi-header">
+            <h1>Materi PHP Dasar</h1>
+            <p>Belajar PHP dari Nol untuk Pemula</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 25%"></div>
+            </div>
+        </div>
+
+        <div class="materi-container">
+            <div class="sidebar">
+                <h3>Modul PHP Dasar</h3>
+                <ul class="module-list">
+                    <li class="active"><a href="#pengenalan">Apa itu PHP?</a></li>
+                    <li><a href="#syntax">Syntax Dasar</a></li>
+                    <li><a href="#variabel">Variabel & Tipe Data</a></li>
+                    <li><a href="#operator">Operator</a></li>
+                    <li><a href="#kondisi">Kondisi</a></li>
+                    <li><a href="#perulangan">Perulangan</a></li>
+                    <li><a href="#array">Array</a></li>
+                    <li><a href="#fungsi">Fungsi</a></li>
+                    <li><a href="#form">Form Handling</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <section id="pengenalan" class="module">
+                    <h2>1. Apa itu PHP?</h2>
+                    <div class="module-content">
+                        <h3>Pengertian PHP</h3>
+                        <p style="text-align: justify;">
+                            <strong>PHP (PHP: Hypertext Preprocessor)</strong> adalah bahasa scripting server-side yang digunakan untuk pengembangan web. PHP dijalankan di server sebelum halaman dikirim ke browser.
+                        </p>
+                        
+                        <h3>Karakteristik PHP</h3>
+                        <ul>
+                            <li><strong>Server-side</strong> - Dijalankan di server, bukan browser</li>
+                            <li><strong>Open Source</strong> - Gratis dan komunitas besar</li>
+                            <li><strong>Cross-platform</strong> - Bisa di Windows, Linux, macOS</li>
+                            <li><strong>Database Support</strong> - Terintegrasi dengan MySQL, PostgreSQL, dll</li>
+                            <li><strong>Easy to Learn</strong> - Syntax mirip C dan Java</li>
+                        </ul>
+
+                        <h3>Contoh Sederhana</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Contoh PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php
+        echo "Halo, Dunia!";
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+
+                        <h3>Yang Bisa Dilakukan PHP</h3>
+                        <ul>
+                            <li>Membuat halaman web dinamis</li>
+                            <li>Mengolah data form</li>
+                            <li>Mengirim dan menerima cookies</li>
+                            <li>Mengakses database</li>
+                            <li>Membuat session user</li>
+                            <li>Membuat file (upload, download, edit)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="syntax" class="module">
+                    <h2>2. Syntax Dasar PHP</h2>
+                    <div class="module-content">
+                        <h3>Struktur Dasar</h3>
+                        <p style="text-align: justify;">
+                            Kode PHP ditulis dalam tag <code>&lt;?php ?&gt;</code> dan file disimpan dengan ekstensi .php
+                        </p>
+
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    // Kode PHP di sini
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Komentar dalam PHP</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    // Ini komentar satu baris
+    
+    # Ini juga komentar satu baris
+    
+    /*
+    Ini adalah
+    komentar multi-baris
+    */
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Output dengan echo dan print</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    // echo - bisa output multiple values
+    echo "Hello World!";
+    echo "Ini ", "baris ", "kedua";
+    
+    // print - hanya satu value
+    print "Hello World!";
+    
+    // Output HTML
+    echo "&lt;h1&gt;Judul&lt;/h1&gt;";
+    echo "&lt;p&gt;Paragraf&lt;/p&gt;";
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Menggabungkan PHP dan HTML</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Contoh&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;&lt;?php echo "Selamat Datang"; ?&gt;&lt;/h1&gt;
+    
+    &lt;?php
+        $nama = "Budi";
+        $umur = 25;
+    ?&gt;
+    
+    &lt;p&gt;Nama: &lt;?php echo $nama; ?&gt;&lt;/p&gt;
+    &lt;p&gt;Umur: &lt;?php echo $umur; ?&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="variabel" class="module">
+                    <h2>3. Variabel dan Tipe Data</h2>
+                    <div class="module-content">
+                        <h3>Membuat Variabel</h3>
+                        <p style="text-align: justify;">
+                            Variabel PHP diawali dengan tanda <code>$</code>. Nama variabel case-sensitive.
+                        </p>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $nama = "Budi";
+    $umur = 25;
+    $tinggi = 170.5;
+    $isActive = true;
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Tipe Data PHP</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    // String
+    $teks = "Hello World";
+    $nama = 'Budi';
+    
+    // Integer
+    $umur = 25;
+    $harga = 10000;
+    
+    // Float/Double
+    $berat = 65.5;
+    $harga = 99.99;
+    
+    // Boolean
+    $isLogin = true;
+    $isAdmin = false;
+    
+    // Null
+    $alamat = null;
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Menggabungkan String</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $nama = "Budi";
+    $umur = 25;
+    
+    // Menggunakan dot (.)
+    echo "Nama: " . $nama . ", Umur: " . $umur;
+    
+    // Dalam double quotes, variabel otomatis diproses
+    echo "Nama: $nama, Umur: $umur";
+    
+    // Single quotes tidak memproses variabel
+    echo 'Nama: $nama, Umur: $umur'; // Output literal
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Konstanta</h3>
+                        <p style="text-align: justify;">Nilai yang tidak bisa diubah.</p>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    define("NAMA_SITUS", "CRISZAN");
+    define("TAHUN_PENDIRIAN", 2024);
+    define("PI", 3.14);
+    
+    echo NAMA_SITUS; // CRISZAN
+    echo TAHUN_PENDIRIAN; // 2024
+?&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="operator" class="module">
+                    <h2>4. Operator</h2>
+                    <div class="module-content">
+                        <h3>Operator Aritmatika</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $a = 10;
+    $b = 3;
+    
+    echo $a + $b;  // 13 (Penjumlahan)
+    echo $a - $b;  // 7  (Pengurangan)
+    echo $a * $b;  // 30 (Perkalian)
+    echo $a / $b;  // 3.333 (Pembagian)
+    echo $a % $b;  // 1 (Modulus)
+    echo $a ** $b; // 1000 (Pangkat)
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Operator Perbandingan</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $x = 5;
+    $y = 10;
+    
+    var_dump($x == $y);   // bool(false)
+    var_dump($x != $y);   // bool(true)
+    var_dump($x === $y);  // bool(false)
+    var_dump($x !== $y);  // bool(true)
+    var_dump($x > $y);    // bool(false)
+    var_dump($x < $y);    // bool(true)
+    var_dump($x >= $y);   // bool(false)
+    var_dump($x <= $y);   // bool(true)
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Operator Logika</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $isLogin = true;
+    $isAdmin = false;
+    
+    var_dump($isLogin && $isAdmin); // bool(false) - AND
+    var_dump($isLogin || $isAdmin); // bool(true)  - OR
+    var_dump(!$isLogin);            // bool(false) - NOT
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Operator Penugasan</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $x = 10;
+    $x += 5;  // $x = $x + 5 (15)
+    $x -= 3;  // $x = $x - 3 (12)
+    $x *= 2;  // $x = $x * 2 (24)
+    $x /= 4;  // $x = $x / 4 (6)
+    $x %= 4;  // $x = $x % 4 (2)
+?&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="kondisi" class="module">
+                    <h2>5. Kondisi (If/Else)</h2>
+                    <div class="module-content">
+                        <h3>If Statement</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $umur = 18;
+    
+    if ($umur >= 18) {
+        echo "Anda sudah dewasa";
+    }
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>If...Else</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $nilai = 75;
+    
+    if ($nilai >= 70) {
+        echo "Anda lulus";
+    } else {
+        echo "Anda tidak lulus";
+    }
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Elseif</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $nilai = 85;
+    
+    if ($nilai >= 90) {
+        echo "Grade: A";
+    } elseif ($nilai >= 80) {
+        echo "Grade: B";
+    } elseif ($nilai >= 70) {
+        echo "Grade: C";
+    } else {
+        echo "Grade: D";
+    }
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Switch Case</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $hari = "Senin";
+    
+    switch ($hari) {
+        case "Senin":
+            echo "Hari kerja";
+            break;
+        case "Sabtu":
+        case "Minggu":
+            echo "Hari libur";
+            break;
+        default:
+            echo "Hari kerja";
+    }
+?&gt;</code></pre>
+                        </div>
+
+                        <h3>Ternary Operator</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;?php
+    $umur = 20;
+    $status = ($umur >= 18) ? "Dewasa" : "Anak-anak";
+    echo $status; // Dewasa
+?&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Modul selanjutnya akan dilanjutkan di response berikutnya -->
+                
+                <div class="navigation-buttons">
+                    <button class="btn-secondary">Modul Sebelumnya</button>
+                    <button class="btn-primary">Modul Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Info Creator</p>
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=61561587017407&locale=id_ID">
+                <img src="assets/fb.png" alt="Facebook" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.instagram.com/krisnar_m/?next=%2F">
+                <img src="assets/ig.png" alt="Instagram" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.youtube.com/channel/UCftXAcErypGKXPra1Ya3Uyw">
+                <img src="assets/yt.png" alt="YouTube" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+            <a href="https://www.tiktok.com/@krisn_rm">
+                <img src="assets/tiktok.png" alt="Tiktok" width="25" height="25" style="border:2px solid black; border-radius:50%;">
+            </a>
+        </div>
+    </footer>
+</body>
+<script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</html>

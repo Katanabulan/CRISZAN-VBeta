@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Template & Komponen</title>
+</head>
+<body>
+  <h1>Template & Komponen</h1>
+  <p>Gunakan <template> untuk membuat blok isi yang dapat di-clone oleh JS.</p>
+  <h2>Contoh Kode</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Template&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;template id=&quot;card&quot;&gt;&lt;div class=&quot;card&quot;&gt;&lt;h3&gt;Judul&lt;/h3&gt;&lt;p&gt;Isi&lt;/p&gt;&lt;/div&gt;&lt;/template&gt;
+&lt;button onclick=&quot;let c=document.getElementById(&#x27;card&#x27;).content.cloneNode(true);document.body.appendChild(c);&quot;&gt;Tambah&lt;/button&gt;
+&lt;/body&gt;&lt;/html&gt;</code></pre>
+</body>
+</html>
